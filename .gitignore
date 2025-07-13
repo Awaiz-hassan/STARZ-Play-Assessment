@@ -1,0 +1,58 @@
+# Android build files
+.gradle/
+build/
+**/build/
+**/captures/
+.cxx/
+.externalNativeBuild/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS-specific
+.DS_Store
+
+# Local configuration (do not commit sensitive or machine-specific settings)
+local.properties
+/local.properties
+
+# IntelliJ IDEA workspace files (project-specific metadata)
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/modules.xml
+.idea/caches/
+.idea/libraries/
+
+# Kotlin/Java compile output
+/out/
+
+# Crashlytics / Fabric (if used)
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Gradle cache
+.gradle/
+gradle-app.setting
+
+# Jetpack Compose compiler cache
+/.compose-cache/
+
+# Generated Hilt components
+build/generated/hilt/
+
+# Unit test reports / coverage
+**/test-results/
+**/jacoco/
+
+# APKs or build outputs
+*.apk
+*.ap_
+*.aab
+
+# Misc
+.idea/httpRequests/
