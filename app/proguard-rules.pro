@@ -1,21 +1,59 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Retrofit + Gson
+-keep class retrofit2.** { *; }
+-dontwarn retrofit2.**
+-dontwarn okhttp3.**
+-dontwarn okio.**
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Gson annotations & models
+-keepattributes Signature
+-keepattributes Exceptions
+-keepattributes RuntimeVisibleAnnotations
+
+
+# OkHttp
+-dontwarn okhttp3.logging.**
+-keep class okhttp3.** { *; }
+
+
+# Coil
+-dontwarn coil.**
+-keep class coil.** { *; }
+
+
+# Jetpack Compose
+-keep class androidx.compose.ui.tooling.** { *; }
+-keep class androidx.compose.runtime.** { *; }
+-keep class androidx.compose.material3.** { *; }
+-dontwarn androidx.compose.**
+
+# Hilt / Dagger
+-keep class dagger.** { *; }
+-keep class javax.inject.** { *; }
+-dontwarn dagger.hilt.**
+
+# Keep ViewModel Hilt injection
+-keepclassmembers class androidx.lifecycle.ViewModel {
+    <init>(...);
+}
+
+-keepclassmembers,allowshrinking class * {
+    @dagger.hilt.android.lifecycle.HiltViewModel <init>(...);
+}
+
+# Kotlin / Coroutines
+-keep class kotlin.Metadata { *; }
+-dontwarn kotlin.**
+-dontwarn kotlinx.coroutines.**
+
+# AndroidX / Jetpack
+-keep class androidx.lifecycle.** { *; }
+-keep class androidx.datastore.** { *; }
+-dontwarn androidx.datastore.**
+
+
+# ExoPlayer
+-keep class com.google.android.exoplayer2.** { *; }
+-dontwarn com.google.android.exoplayer2.**
+
